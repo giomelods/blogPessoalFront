@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { AuthService } from '../service/auth.service';
 
@@ -26,7 +26,19 @@ export class EntrarComponent implements OnInit {
     this.auth.entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
       this.usuarioLogin = resp
 
-      environment.production
+      environment.token = this.usuarioLogin.token
+      environment.nome = this.usuarioLogin.nome
+      environment.foto  = this.usuarioLogin.foto
+      environment.id = this.usuarioLogin.id
+
+      console.log(environment.token)
+
+      console.log(environment.nome)
+
+      console.log(environment.foto)
+
+      console.log(environment.id)
+
 
       this.usuarioLogin.foto
 
