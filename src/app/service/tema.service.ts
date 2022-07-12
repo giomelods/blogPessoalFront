@@ -22,9 +22,13 @@ return this.http.get<Tema[]>('https://bpessoal.herokuapp.com/temas', this.token)
  }
 
  getByIdTema(id: number): Observable<Tema>{
-return this.http.get<Tema>('https://bpessoal.herokuapp.com/temas/${id}', this.token)
+return this.http.get<Tema>(`https://bpessoal.herokuapp.com/temas/${id}`, this.token)
 
  }
+ getByNomeTema(nome: string): Observable<Tema[]>{
+  return this.http.get<Tema[]>(`https://bpessoal.herokuapp.com/tema/nome/${nome}`, this.token)
+}
+
 
  postTema(tema: Tema): Observable<Tema>{
   return this.http.post<Tema>('https://bpessoal.herokuapp.com/temas', tema,this.token)
@@ -36,7 +40,7 @@ return this.http.put<Tema>('https://bpessoal.herokuapp.com/temas', tema, this.to
 }
 
 deleteTema(id: number) {
-return this.http.delete('https://bpessoal.herokuapp.com/temas/${id}', this.token)
+return this.http.delete(`https://bpessoal.herokuapp.com/temas/${id}`, this.token)
 
 }
 

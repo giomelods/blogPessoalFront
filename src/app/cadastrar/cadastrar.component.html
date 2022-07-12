@@ -8,12 +8,14 @@
                     <h1 class="text-center">Cadastro</h1>
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input [(ngModel)]='usuario.nome' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu nome">
+                        <input [(ngModel)]='usuario.nome' class="form-control" type="text" name="usuario" id="usuario"
+                            placeholder="Seu nome">
                     </div>
 
                     <div class="form-group">
                         <label for="nome">Usuario</label>
-                        <input [(ngModel)]='usuario.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu nome">
+                        <input [(ngModel)]='usuario.usuario' class="form-control" type="text" name="usuario"
+                            id="usuario" placeholder="Seu nome">
                     </div>
 
                     <div class="form-group">
@@ -24,11 +26,12 @@
 
                     <div class="form-group">
                         <label for="senha">Senha</label>
-                        <input (input)="confirmarSenha($event)" class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                        <input [(ngModel)]="usuario.senha"  class="form-control" type="password" name="senha"
+                            id="senha" placeholder="Sua senha">
                     </div>
                     <div class="form-group">
-                        <label for="confirmesenha">Senha</label>
-                        <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="senha" id="senha"
+                        <label for="confirmesenha">Confirme sua Senha</label>
+                        <input (input)="confirmarSenha($event)" class="form-control" type="password" name="senha" id="senha"
                             placeholder="Confirme sua senha">
                     </div>
                     <div class="form-group">
