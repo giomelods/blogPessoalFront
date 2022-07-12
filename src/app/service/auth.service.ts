@@ -16,14 +16,17 @@ export class AuthService {
     private router: Router
   ) { }
 
-entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
+  entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
   return this.http.post<UsuarioLogin>('https://bpessoal.herokuapp.com/usuarios/logar', usuarioLogin)
 
 }
 
 
-cadastrar(usuario:Usuario): Observable<Usuario>{
+  cadastrar(usuario:Usuario): Observable<Usuario>{
 return this.http.post<Usuario>('https://bpessoal.herokuapp.com/usuarios/cadastrar',usuario)
+  }
+  atualizar(usuario: Usuario): Observable<Usuario>{
+    return this.http.post<Usuario>('https://bpessoal.herokuapp.com/usuarios/atualizar', usuario)
   }
   getByIdUsuario(id: number): Observable<Usuario>{
   return this.http.get<Usuario>(`https://bpessoal.herokuapp.com/usuarios/${id}`)
@@ -39,7 +42,7 @@ logado(){
  return ok
 
 }
-/*adm(){
+adm(){
   let ok: boolean = false
 
   if (environment.tipo == 'adm'){
@@ -47,5 +50,5 @@ logado(){
   }
 
   return ok
-}*/
+}
 }

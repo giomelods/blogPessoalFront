@@ -8,8 +8,4 @@ public texto: string
 public data: Date
 public usuario: Usuario
 public tema: Tema
-
-
-
-
 }

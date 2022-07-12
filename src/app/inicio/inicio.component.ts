@@ -46,7 +46,7 @@ reverse = true
     window.scroll(0,0)
 
     if(environment.token == ''){
-      alert('Sua seção expirou , faça o login novamente')
+      this.alertas.showAlertDanger('Sua seção expirou , faça o login novamente')
       this.router.navigate(['/entrar'])
     }
     this.getAllTemas()
